@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const projectsSchema = new Schema({
+const JobsSchema = new Schema({
   id: {
     type: Schema.Types.Number,
     required: true,
@@ -66,3 +66,7 @@ const projectsSchema = new Schema({
     },
   },
 });
+
+const Devjobs = model("devjobs", JobsSchema);
+
+export default Devjobs;
