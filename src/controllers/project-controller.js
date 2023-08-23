@@ -17,3 +17,19 @@ export const jobPost = async (req, res) => {
     res.status(400).json({ error: "error" });
   }
 };
+
+export const SizePageJob = async (req, res) => {
+  try {
+    const size = parseInt(req.params.size);
+    const page = parseInt(req.params.page);
+
+    const deadline = size * page;
+
+    const job = await Devjobs.find().limit(deadline);
+
+    res.status(200).json(job);
+  } catch (error) {
+    console.log("error", error);
+    res.status(500).json({ error: "happend error" });
+  }
+};
