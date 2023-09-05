@@ -3,7 +3,11 @@ import connect from "./database/mongo.js";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import cors from "cors";
-import { getAllDevjobs, jobPost } from "./controllers/project-controller.js";
+import {
+  SizePageJob,
+  getAllDevjobs,
+  jobPost,
+} from "./controllers/project-controller.js";
 
 dotenv.config();
 
@@ -20,5 +24,6 @@ app.get("/", (req, res) => {
 
 app.get("/api/devjobs", getAllDevjobs);
 app.post("/api/postjob", jobPost);
+app.get("/api/size/page", SizePageJob);
 
 app.listen(3000);
