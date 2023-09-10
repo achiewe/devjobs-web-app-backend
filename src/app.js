@@ -26,4 +26,4 @@ app.get("/api/devjobs", getAllDevjobs);
 app.post("/api/postjob", jobPost);
 app.get("/api/size/page", SizePageJob);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
