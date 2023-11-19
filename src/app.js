@@ -13,6 +13,7 @@ dotenv.config();
 
 connect();
 
+// expess framework
 const app = express();
 
 app.use(bodyParser.json());
